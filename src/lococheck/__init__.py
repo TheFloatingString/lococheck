@@ -2,7 +2,7 @@ import numpy as np
 from typing import List
 
 
-def check_anymal_d(x: np.ndarray) -> List[bool]:
+def check_anymal_d_obs(x: np.ndarray) -> List[bool]:
     """
     params:
     -------
