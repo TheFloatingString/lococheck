@@ -19,6 +19,11 @@ def check_anymal_d(x: np.ndarray) -> List[bool]:
     24 to 35: joint velocities (in absolute radians per second)
     """
 
+    if hasattr(x, 'cpu'):
+        x = x.cpu().numpy()
+    elif hasattr(x, 'numpy'):
+        x = x.numpy()
+
     assert x.shape[1] == 36, "State vector must have 36 columns"
     assert x.ndim == 2, "State vector must be 2D"
 
